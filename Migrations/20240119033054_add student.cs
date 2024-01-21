@@ -8,7 +8,7 @@ namespace aspcoredemo.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
+            migrationBuilder.CreateTable(  //table creation
                 name: "student",
                 columns: table => new
                 {
