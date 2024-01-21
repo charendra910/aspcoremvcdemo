@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using aspcoredemo.Data;
 
-#nullable disable
+#nullable disabled
 
 namespace aspcoredemo.Migrations
 {
