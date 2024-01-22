@@ -28,7 +28,6 @@ namespace aspcoredemo.Migrations
                     b.Property<int>("student_enroll")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("student_enroll"), 1L, 1);
 
                     b.Property<string>("branch")
