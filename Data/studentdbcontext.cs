@@ -6,7 +6,7 @@ namespace aspcoredemo.Data
     public class studentdbcontext:DbContext
     {
         //ctor double tab creates constructor
-        public studentdbcontext(DbContextOptions<studentdbcontext>o)  // o 
+        public studentdbcontext(DbContextOptions<studentdbcontext>o)  // o means object
             :base(o)
         {
                 
