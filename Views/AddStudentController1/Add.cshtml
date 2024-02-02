@@ -1,0 +1,39 @@
+﻿@model studentregister
+
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container p-4">
+    <div class="row p-3">
+        <div class="col-6">
+            <h2> Students </h2>
+        </div>
+       
+    </div>
+</div>
+
+<!-- Form for adding a new student -->
+<form asp-action="Add" asp-controller="HomeController1" method="post">
+    <div class="form-group">
+        <label for="Student_Name">Student Name</label>
+        <input type="text" class="form-control" id="Student_Name" name="Student_Name" required>
+    </div>
+    <div class="form-group">
+        <label for="Student_Email">Student Email</label>
+        <input type="email" class="form-control" id="Student_Email" name="Student_Email" required>
+    </div>
+    <div class="form-group">
+        <label for="Student_Branch">Student Branch</label>
+        <input type="text" class="form-control" id="Student_Branch" name="Student_Branch" required>
+    </div>
+    <div class="form-group">
+        <label for="Student_Division">Student Division</label>
+        <input type="text" class="form-control" id="Student_Division" name="Student_Division" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<!-- Display student list table -->
+
