@@ -1,5 +1,7 @@
 ﻿using aspcoredemo.Data;
+using aspcoredemo.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace aspcoredemo.Controllers
 {
@@ -13,12 +15,41 @@ namespace aspcoredemo.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var students = db.student.ToList();
+            return View(students);
+           
         }
 
         public IActionResult Add()
         {
+            
             return View();
         }
+
+
+        [HttpPost]
+        public IActionResult Add(studentregister studentregister)
+        {
+            db.student.Add(studentregister);
+            db.SaveChanges();
+            return RedirectToAction("Display");
+        }
+
+
+        public IActionResult Edit(int id)
+        {
+            var students = db.student.Find(id);
+            if(students == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                db.student.Update(students);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+        }
+       
     }
 }

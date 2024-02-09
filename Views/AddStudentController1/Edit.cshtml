@@ -1,12 +1,10 @@
 ﻿@model studentregister
-
 @{
-    ViewData["Title"] = "Add";
+    ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
-
 }
 
-<h1>Add</h1>
+<h1>Edit</h1>
 <form method="post">
     <div class=" border p-3 m-4">
         <div class="row pb-3">
@@ -28,7 +26,8 @@
             <label asp-for="student_division"></label>
             <input asp-for="student_division" class="form-control" />
         </div>
-        <button class="btn btn-primary" type="submit">ADD</button>
+        <button class="btn btn-primary" type="submit">Update</button>
     </div>
-    <a asp-action="Index" asp-controller="studentregister">back to register </a>
+    <a asp-action="Index" asp-controller="studentregister">Back to register </a>
 </form>
+
