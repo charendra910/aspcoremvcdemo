@@ -1,0 +1,103 @@
+﻿@model IEnumerable<table1>
+@{
+    ViewData["Title"] = "Adminaddindex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px; /* Adjust the gap between boxes */
+            margin-bottom: 20px; /* Add margin at the bottom */
+        }
+
+        .box {
+            width: calc(33.33% - 10px); /* Adjust the width of each box */
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px; /* Apply border-radius for rounded corners */
+        }
+
+        .container-two {
+            display: flex;
+            justify-content: space-between;
+            gap: 1px; /* Adjust the gap between boxes */
+        }
+
+        .box-two {
+            width: calc(50% - 10px); /* Adjust the width of each box */
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px; /* Apply border-radius for rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+    </div>
+    <div class="container-two">
+        <div class="box-two">Box 4</div>
+        <div class="box-two">Box 5</div>
+    </div>
+</body>
+</html>
+
+
+
+
+<h1>`Admin List</h1>
+<div class="container p-4">
+    <div class="row p-3">
+        <div class="col-6">
+            <h2> Create Admin </h2>
+        </div>
+        <div class="col-6">
+            <a class=" btn btn-primary" asp-action="Add" asp-
+               controller="AdminController1">Add Admin</a>
+        </div>
+    </div>
+</div>
+<table class="table table-bordered table-striped" style="width:auto">
+    <thead>
+        <tr>
+            <th>
+                Admin_Name
+            </th>
+            <th>
+                Admin_Email
+            </th>
+            <th>
+                Admin_Password
+            </th>
+            <th>
+                Admin_Department
+            </th>
+            <th>
+                Admin_Mobile
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @item.name</td>
+                <td>@item.email </td>
+                <td>@item.password </td>
+                <td>@item.department </td>
+                <td>@item.mobile</td>
+            </tr>
+        }
+    </tbody>
+</table>

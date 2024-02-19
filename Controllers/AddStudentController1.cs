@@ -13,6 +13,7 @@ namespace aspcoredemo.Controllers
         {
             this.db = db;
         }
+
         public IActionResult Index()
         {
             var students = db.student.ToList();
@@ -36,6 +37,12 @@ namespace aspcoredemo.Controllers
         }
 
 
+        public IActionResult Edit(studentregister model)
+        {
+            return View();
+        }
+
+        [HttpPost]
         public IActionResult Edit(int id)
         {
             var students = db.student.Find(id);
@@ -50,6 +57,13 @@ namespace aspcoredemo.Controllers
                 return RedirectToAction("Index");
             }
         }
-       
+        public IActionResult Delete(int id)
+        {
+            var data = db.student.Find(id);
+            db.student.Remove(data);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }

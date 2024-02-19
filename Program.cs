@@ -11,6 +11,12 @@ builder.Services.AddDbContext<studentdbcontext>(o =>
     o.UseSqlServer(builder.Configuration.GetConnectionString("con"));  //to register connection string
 });
 
+builder.Services.AddDbContext<admincontext>(obj =>
+{
+    obj.UseSqlServer(builder.Configuration.GetConnectionString("con"));  //to register connection string
+});
+
+
 var app = builder.Build();
 //builder.Services.AddDbContext
 
