@@ -23,6 +23,8 @@ namespace aspcoredemo.Controllers
 
         //hello 
 
+        //.net core mvc
+
         public IActionResult Add()
         {
             
